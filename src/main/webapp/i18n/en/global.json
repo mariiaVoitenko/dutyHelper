@@ -6,10 +6,6 @@
             "home": "Home",
             "entities": {
                 "main": "Entities",
-                "status": "Status",
-                "priority": "Priority",
-                "category": "Category",
-                "user_group": "User_group",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
