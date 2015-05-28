@@ -6,11 +6,11 @@ spring:
         active: dev
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: 
-        databaseName: dutyHelper
+        url:
+        databaseName: responsibilityManager
         serverName: localhost
-        username: dutyHelper
-        password: 
+        username: postgres
+        password: admin
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect

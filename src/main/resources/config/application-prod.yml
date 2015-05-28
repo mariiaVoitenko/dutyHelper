@@ -6,11 +6,11 @@ spring:
         active: prod
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: 
-        databaseName: dutyHelper
-        serverName: localhost
-        username: dutyHelper
-        password: 
+        url:
+       databaseName: responsibilityManager
+               serverName: localhost
+               username: postgres
+               password: admin
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect
@@ -26,7 +26,7 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
             hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
-            
+
     thymeleaf:
         mode: XHTML
         cache: true
