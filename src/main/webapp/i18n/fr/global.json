@@ -7,6 +7,7 @@
             "entities": {
                 "main": "Entités",
                 "status": "Status",
+                "priority": "Priority",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

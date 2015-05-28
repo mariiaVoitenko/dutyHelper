@@ -1,0 +1,19 @@
+{
+    "dutyhelperApp": {
+        "priority" : {
+            "home": {
+                "title": "Prioritys",
+                "createLabel": "Créer un nouveau Priority",
+                "createOrEditLabel": "Créer ou éditer un Priority"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Priority {{ id }} ?"
+            },
+            "detail": {
+                "title": "Priority"
+            },
+            "name": "Name"
+        }
+    }
+}
+
