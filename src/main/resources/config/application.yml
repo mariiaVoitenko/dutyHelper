@@ -16,8 +16,8 @@ async:
 mail:
     host: smtp.gmail.com
     port: 587
-    username: champmanager.practice@gmail.com
-    password: champmanager
+    username: championshipmanager0@gmail.com
+    password: somepassword
     protocol: smtp
     tls: true
     auth: true
