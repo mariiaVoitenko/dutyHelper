@@ -1,0 +1,26 @@
+{
+    "dutyhelperApp": {
+        "duty" : {
+            "home": {
+                "title": "Dutys",
+                "createLabel": "Créer un nouveau Duty",
+                "createOrEditLabel": "Créer ou éditer un Duty"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Duty {{ id }} ?"
+            },
+            "detail": {
+                "title": "Duty"
+            },
+            "name": "Name",
+            "description": "Description",
+            "start_date": "Start_date",
+            "end_date": "End_date",
+            "can_change": "Can_change",
+            "is_done": "Is_done",
+            "priority": "priority",
+            "category": "category"
+        }
+    }
+}
+

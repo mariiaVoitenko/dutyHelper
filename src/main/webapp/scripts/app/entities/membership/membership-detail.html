@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="dutyhelperApp.membership.detail.title">Membership</span> {{membership.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.membership.status">status</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{membership.status.id}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.membership.user">user</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{membership.user.id}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.membership.user_group">user_group</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{membership.user_group.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="membership"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

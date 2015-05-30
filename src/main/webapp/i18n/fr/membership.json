@@ -1,0 +1,21 @@
+{
+    "dutyhelperApp": {
+        "membership" : {
+            "home": {
+                "title": "Memberships",
+                "createLabel": "Créer un nouveau Membership",
+                "createOrEditLabel": "Créer ou éditer un Membership"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Membership {{ id }} ?"
+            },
+            "detail": {
+                "title": "Membership"
+            },
+            "status": "status",
+            "user": "user",
+            "user_group": "user_group"
+        }
+    }
+}
+

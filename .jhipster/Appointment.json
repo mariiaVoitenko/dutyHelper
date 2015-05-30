@@ -1,0 +1,36 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "relationshipNameCapitalized": "User",
+            "relationshipFieldName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "User",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "duty",
+            "relationshipNameCapitalized": "Duty",
+            "relationshipFieldName": "duty",
+            "otherEntityName": "duty",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Duty",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150530111741",
+    "pagination": "pager",
+    "validation": false
+}

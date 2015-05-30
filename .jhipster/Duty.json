@@ -1,0 +1,104 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "priority",
+            "relationshipNameCapitalized": "Priority",
+            "relationshipFieldName": "priority",
+            "otherEntityName": "priority",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Priority",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "category",
+            "relationshipNameCapitalized": "Category",
+            "relationshipFieldName": "category",
+            "otherEntityName": "category",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Category",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description",
+            "fieldInJavaBeanMethod": "Description",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "2000"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "start_date",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "Start_date",
+            "fieldNameUnderscored": "start_date",
+            "fieldInJavaBeanMethod": "Start_date",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "end_date",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "End_date",
+            "fieldNameUnderscored": "end_date",
+            "fieldInJavaBeanMethod": "End_date",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "can_change",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "Can_change",
+            "fieldNameUnderscored": "can_change",
+            "fieldInJavaBeanMethod": "Can_change",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "is_done",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "Is_done",
+            "fieldNameUnderscored": "is_done",
+            "fieldInJavaBeanMethod": "Is_done",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150530111506",
+    "pagination": "pager",
+    "validation": true
+}

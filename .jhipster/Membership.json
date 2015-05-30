@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "status",
+            "relationshipNameCapitalized": "Status",
+            "relationshipFieldName": "status",
+            "otherEntityName": "status",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Status",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "user",
+            "relationshipNameCapitalized": "User",
+            "relationshipFieldName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "User",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "user_group",
+            "relationshipNameCapitalized": "User_group",
+            "relationshipFieldName": "user_group",
+            "otherEntityName": "user_group",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "User_group",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150530111049",
+    "pagination": "pager",
+    "validation": false
+}

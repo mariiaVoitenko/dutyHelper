@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="dutyhelperApp.duty.detail.title">Duty</span> {{duty.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.description">Description</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.description}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.start_date">Start_date</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.start_date}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.end_date">End_date</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.end_date}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.can_change">Can_change</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.can_change}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.is_done">Is_done</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.is_done}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.priority">priority</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.priority.id}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="dutyhelperApp.duty.category">category</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{duty.category.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="duty"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

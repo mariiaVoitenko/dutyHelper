@@ -1,0 +1,19 @@
+{
+    "dutyhelperApp": {
+        "user_group" : {
+            "home": {
+                "title": "User_groups",
+                "createLabel": "Créer un nouveau User_group",
+                "createOrEditLabel": "Créer ou éditer un User_group"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le User_group {{ id }} ?"
+            },
+            "detail": {
+                "title": "User_group"
+            },
+            "name": "Name"
+        }
+    }
+}
+

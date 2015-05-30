@@ -1,0 +1,19 @@
+{
+    "dutyhelperApp": {
+        "appointment" : {
+            "home": {
+                "title": "Appointments",
+                "createLabel": "Create a new Appointment",
+                "createOrEditLabel": "Create or edit a Appointment"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Appointment {{ id }}?"
+            },
+            "detail": {
+                "title": "Appointment"
+            },
+            "user": "user",
+            "duty": "duty"
+        }
+    }
+}
