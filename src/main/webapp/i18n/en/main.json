@@ -1,7 +1,8 @@
 {
     "main": {
-        "title": "Welcome, Java Hipster!",
-        "subtitle": "This is your homepage",
+        "title": "Welcome to Duty Helper!",
+        "subtitle": "This is our homepage",
+        "introduction": "Duty Helper is a perfect application to manage duties in big groups. Try it!",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
