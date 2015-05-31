@@ -15,6 +15,16 @@
                 "appointment": "Appointment",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
+            "manage-groups": {
+                "main": "Groups",
+                "show": "Show all",
+                "create": "Create new"
+            },
+            "manage-duties": {
+                "main": "Duties",
+                "show": "Show all",
+                "create": "Create new"
+            },
             "account": {
                 "main": "Account",
                 "settings": "Settings",
@@ -53,7 +63,7 @@
                 "register": "You don't have an account yet? <a href=\"#/register\">Register a new account</a>"
             },
             "error": {
-                "dontmatch" : "The password and its confirmation do not match!"
+                "dontmatch": "The password and its confirmation do not match!"
             },
             "validate": {
                 "newpassword": {

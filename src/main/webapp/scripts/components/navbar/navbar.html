@@ -46,6 +46,46 @@
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>
+                <!--GROUPS -->
+                <li ng-class="{active: $state.includes('user')}" ng-switch-when="true" has-role="ROLE_USER"
+                    class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet" translate="global.menu.manage-groups.main">
+                                        Groups
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="#"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.manage-groups.show">Show all</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="#"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.manage-groups.create">Create new</span></a></li>
+                    </ul>
+                </li>
+                <!-->
+                <!--DUTIES -->
+                <li ng-class="{active: $state.includes('user')}" ng-switch-when="true" has-role="ROLE_USER"
+                    class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                                <span>
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                    <span class="hidden-tablet" translate="global.menu.manage-duties.main">
+                                        Duties
+                                    </span>
+                                    <b class="caret"></b>
+                                </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="#"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.manage-duties.show">Show all</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="#"><span class="glyphicon glyphicon-asterisk"></span>
+                            &#xA0;<span translate="global.menu.manage-duties.create">Create new</span></a></li>
+                    </ul>
+                </li>
+                <!-->
                 <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                 <span>
