@@ -206,32 +206,32 @@ ul#strength {
     color: #f39c12;
 }
 
-ul {
+.footer ul {
     font: 14px Verdana, Geneva, sans-serif;
     overflow: hidden;
     list-style-type: none;
 }
 
-ul li {
+.footer ul li {
     padding: 4px;
 }
 
-ul li.left {
+.footer ul li.left {
     width: 20%;
     float: left;
 }
 
-ul li.right {
+.footer ul li.right {
     width: 20%;
     float: right;
     text-align: right;
 }
 
-ul li.center {
+.footer ul li.center {
     text-align: center;
 }
 
-ul li .content {
+.footer ul li .content {
     display: inline-block;
     text-align: justify;
 
