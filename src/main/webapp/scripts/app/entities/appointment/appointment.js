@@ -7,7 +7,7 @@ angular.module('dutyhelperApp')
                 parent: 'entity',
                 url: '/appointment',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: ['ROLE_ADMIN'],
                     pageTitle: 'dutyhelperApp.appointment.home.title'
                 },
                 views: {
@@ -27,7 +27,7 @@ angular.module('dutyhelperApp')
                 parent: 'entity',
                 url: '/appointment/:id',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: ['ROLE_ADMIN'],
                     pageTitle: 'dutyhelperApp.appointment.detail.title'
                 },
                 views: {
