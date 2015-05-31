@@ -76,13 +76,7 @@ Browser Upgrade Prompt
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
     .hipster {
         background: url("../images/hipster2x.png") no-repeat center top;
         background-size: contain;
@@ -112,36 +106,141 @@ only screen and (                min-resolution: 2dppx) {
     font-size: 10px;
 }
 
-.voffset  { margin-top: 2px; }
-.voffset1 { margin-top: 5px; }
-.voffset2 { margin-top: 10px; }
-.voffset3 { margin-top: 15px; }
-.voffset4 { margin-top: 30px; }
-.voffset5 { margin-top: 40px; }
-.voffset6 { margin-top: 60px; }
-.voffset7 { margin-top: 80px; }
-.voffset8 { margin-top: 100px; }
-.voffset9 { margin-top: 150px; }
+.voffset {
+    margin-top: 2px;
+}
+
+.voffset1 {
+    margin-top: 5px;
+}
+
+.voffset2 {
+    margin-top: 10px;
+}
+
+.voffset3 {
+    margin-top: 15px;
+}
+
+.voffset4 {
+    margin-top: 30px;
+}
+
+.voffset5 {
+    margin-top: 40px;
+}
+
+.voffset6 {
+    margin-top: 60px;
+}
+
+.voffset7 {
+    margin-top: 80px;
+}
+
+.voffset8 {
+    margin-top: 100px;
+}
+
+.voffset9 {
+    margin-top: 150px;
+}
 
 /* start Password strength bar style */
 ul#strength {
-    display:inline;
-    list-style:none;
-    margin:0;
-    margin-left:15px;
-    padding:0;
-    vertical-align:2px;
+    display: inline;
+    list-style: none;
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    vertical-align: 2px;
 }
 
 .point:last {
-    margin:0 !important;
+    margin: 0 !important;
 }
+
 .point {
-    background:#DDD;
-    border-radius:2px;
-    display:inline-block;
-    height:5px;
-    margin-right:1px;
-    width:20px;
+    background: #DDD;
+    border-radius: 2px;
+    display: inline-block;
+    height: 5px;
+    margin-right: 1px;
+    width: 20px;
 }
+
 /* end Password strength bar style */
+
+#social:hover {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}
+
+#social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*
+    Only Needed in Multi-Coloured Variation
+                                               */
+.social-fb:hover {
+    color: #3B5998;
+}
+
+.social-tw:hover {
+    color: #4099FF;
+}
+
+.social-gp:hover {
+    color: #d34836;
+}
+
+.social-em:hover {
+    color: #f39c12;
+}
+
+ul {
+    font: 14px Verdana, Geneva, sans-serif;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+ul li {
+    padding: 4px;
+}
+
+ul li.left {
+    width: 20%;
+    float: left;
+}
+
+ul li.right {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+
+ul li.center {
+    text-align: center;
+}
+
+ul li .content {
+    display: inline-block;
+    text-align: justify;
+
+    /* эмуляция inline-block для IE6-7*/
+/ / display : inline;
+/ / zoom : 1;
+}
+
+.h3shift {
+    margin-left: 45px;
+}
+

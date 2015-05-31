@@ -3,6 +3,7 @@
         "title": "Welcome to Duty Helper!",
         "subtitle": "This is our homepage",
         "introduction": "Duty Helper is a perfect application to manage duties in big groups. Try it!",
+        "getting-started": "So now you can create a group and allocate new duties in it",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
