@@ -1,5 +1,6 @@
 package com.voitenko.dutyhelper.repository;
 
+import com.voitenko.dutyhelper.domain.Membership;
 import com.voitenko.dutyhelper.domain.User;
 
 import org.joda.time.DateTime;

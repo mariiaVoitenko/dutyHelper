@@ -1,7 +1,9 @@
 package com.voitenko.dutyhelper.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.voitenko.dutyhelper.domain.Membership;
 import com.voitenko.dutyhelper.domain.User;
+import com.voitenko.dutyhelper.repository.MembershipRepository;
 import com.voitenko.dutyhelper.repository.UserRepository;
 import com.voitenko.dutyhelper.security.AuthoritiesConstants;
 import org.slf4j.Logger;
@@ -28,6 +30,9 @@ public class UserResource {
 
     @Inject
     private UserRepository userRepository;
+
+    @Inject
+    private MembershipRepository membershipRepository;
 
     /**
      * GET  /users -> get all users.
