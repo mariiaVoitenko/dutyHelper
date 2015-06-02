@@ -25,7 +25,7 @@ angular.module('dutyhelperApp')
             })
             .state('user_groupForUser', {
                 parent: 'entity',
-                url: '/user_group/bla',
+                url: '/user_group/certain',
                 data: {
                     roles: ['ROLE_USER'],
                     pageTitle: 'dutyhelperApp.user_group.home.title'
@@ -65,7 +65,7 @@ angular.module('dutyhelperApp')
             })
             .state('certain-user_groupDetail', {
                 parent: 'entity',
-                url: '/user_group/:id',
+                url: '/user_group/certain/:id',
                 data: {
                     roles: ['ROLE_USER'],
                     pageTitle: 'dutyhelperApp.user_group.detail.title'

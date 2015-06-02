@@ -9,7 +9,7 @@ angular.module('dutyhelperApp')
         $scope.loadAll = function () {
             User_group.query({page: $scope.page, per_page: 20}, function (result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
-
+                console.log("entered loadAll");
                 var getCurrentUser = function httpGet(theUrl) {
                     var xmlHttp = new XMLHttpRequest();
                     xmlHttp.open("GET", theUrl, false);
@@ -17,8 +17,6 @@ angular.module('dutyhelperApp')
                     return xmlHttp.responseText;
                 };
                 $scope.currentUser = JSON.parse(getCurrentUser('/api/account'));
-
-                var memberships = $scope.memberships;
                 var currentMemberships = [];
                 var index;
                 for (index = 0; index < $scope.memberships.length; ++index) {
@@ -27,11 +25,8 @@ angular.module('dutyhelperApp')
                     }
                 }
                 ;
-
                 var groups = result;
                 var currentGroups = [];
-
-
                 var index2;
                 for (index = 0; index < groups.length; ++index) {
                     for (index2 = 0; index2 < currentMemberships.length; ++index2) {

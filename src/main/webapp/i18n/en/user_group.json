@@ -2,15 +2,15 @@
     "dutyhelperApp": {
         "user_group" : {
             "home": {
-                "title": "User_groups",
-                "createLabel": "Create a new User_group",
-                "createOrEditLabel": "Create or edit a User_group"
+                "title": "My Groups",
+                "createLabel": "Create a new group",
+                "createOrEditLabel": "Create or edit a group"
             },
             "delete": {
-                "question": "Are you sure you want to delete User_group {{ id }}?"
+                "question": "Are you sure you want to delete group {{ id }}?"
             },
             "detail": {
-                "title": "User_group"
+                "title": "Group"
             },
             "name": "Name"
         }
