@@ -17,39 +17,31 @@ angular.module('dutyhelperApp')
                     return xmlHttp.responseText;
                 };
                 $scope.currentUser = JSON.parse(getCurrentUser('/api/account'));
-                console.log($scope.currentUser);
 
                 var memberships = $scope.memberships;
                 var currentMemberships = [];
-
-                memberships.forEach(function (membership, i, memberships) {
-                    if (membership.user.id === $scope.currentUser.id) {
-                        currentMemberships.push(membership);
-                        console.log("pushed" + membership.user.id);
+                var index;
+                for (index = 0; index < $scope.memberships.length; ++index) {
+                    if ($scope.memberships[index].user.id === $scope.currentUser.id) {
+                        currentMemberships.push($scope.memberships[index]);
                     }
-                });
+                }
+                ;
 
                 var groups = result;
                 var currentGroups = [];
 
-                var index;
+
                 var index2;
                 for (index = 0; index < groups.length; ++index) {
-                    console.log("entered 1");
-                    for (index2 = 0; index2 < memberships.length; ++index2) {
-                        console.log("entered 2");
-                        if (memberships[index2].user_group.id === groups[index].id) {
-                            console.log("entered if");
+                    for (index2 = 0; index2 < currentMemberships.length; ++index2) {
+                        if (currentMemberships[index2].user_group.id === groups[index].id) {
                             currentGroups.push(groups[index]);
-                            console.log("pushed" + currentGroups[index].id);
                             break;
                         }
                     }
                 }
                 $scope.user_groups = currentGroups;
-                currentGroups = [];
-                currentMemberships = [];
-                $scope.currentUser = [];
             });
         };
         $scope.loadPage = function (page) {
