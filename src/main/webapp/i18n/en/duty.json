@@ -2,24 +2,24 @@
     "dutyhelperApp": {
         "duty" : {
             "home": {
-                "title": "Dutys",
-                "createLabel": "Create a new Duty",
-                "createOrEditLabel": "Create or edit a Duty"
+                "title": "Duties",
+                "createLabel": "Create a new duty",
+                "createOrEditLabel": "Create or edit a duty"
             },
             "delete": {
-                "question": "Are you sure you want to delete Duty {{ id }}?"
+                "question": "Are you sure you want to delete duty {{ id }}?"
             },
             "detail": {
-                "title": "Duty"
+                "title": "Duty: "
             },
             "name": "Name",
             "description": "Description",
-            "start_date": "Start_date",
-            "end_date": "End_date",
-            "can_change": "Can_change",
-            "is_done": "Is_done",
-            "priority": "priority",
-            "category": "category"
+            "start_date": "Start date",
+            "end_date": "End date",
+            "can_change": "Can change",
+            "is_done": "Done",
+            "priority": "Priority",
+            "category": "Category"
         }
     }
 }

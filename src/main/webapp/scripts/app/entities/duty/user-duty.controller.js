@@ -27,11 +27,37 @@ angular.module('dutyhelperApp')
 
         $scope.save = function () {
             if ($scope.duty.id != null) {
+                var id;
+                for (var i = 0; i < $scope.prioritys.length; ++i) {
+                    if ($scope.prioritys[i].name === $scope.duty.priority.name) {
+                        id = $scope.prioritys[i].id;
+                    }
+                }
+                $scope.duty.priority.id = id;
+                for (var i = 0; i < $scope.categorys.length; ++i) {
+                    if ($scope.categorys[i].name === $scope.duty.category.name) {
+                        id = $scope.categorys[i].id;
+                    }
+                }
+                $scope.duty.category.id = id;
                 Duty.update($scope.duty,
                     function () {
                         $scope.refresh();
                     });
             } else {
+                var id;
+                for (var i = 0; i < $scope.prioritys.length; ++i) {
+                    if ($scope.prioritys[i].name === $scope.duty.priority.name) {
+                        id = $scope.prioritys[i].id;
+                    }
+                }
+                $scope.duty.priority.id = id;
+                for (var i = 0; i < $scope.categorys.length; ++i) {
+                    if ($scope.categorys[i].name === $scope.duty.category.name) {
+                        id = $scope.categorys[i].id;
+                    }
+                }
+                $scope.duty.category.id = id;
                 Duty.save($scope.duty,
                     function () {
                         $scope.refresh();
