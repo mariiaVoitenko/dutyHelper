@@ -1,15 +1,46 @@
 'use strict';
 
 angular.module('dutyhelperApp')
-    .controller('UserDutyController', function ($scope, Duty, Priority, Category, ParseLinks) {
+    .controller('UserDutyController', function ($scope, Duty, Priority, Category, Appointment, ParseLinks) {
         $scope.dutys = [];
         $scope.prioritys = Priority.query();
         $scope.categorys = Category.query();
+        $scope.appointments = Appointment.query();
         $scope.page = 1;
         $scope.loadAll = function () {
             Duty.query({page: $scope.page, per_page: 20}, function (result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
-                $scope.dutys = result;
+                console.log("entered loadAll");
+                var getCurrentUser = function httpGet(theUrl) {
+                    var xmlHttp = new XMLHttpRequest();
+                    xmlHttp.open("GET", theUrl, false);
+                    xmlHttp.send(null);
+                    return xmlHttp.responseText;
+                };
+                $scope.currentUser = JSON.parse(getCurrentUser('/api/account'));
+                var currentAppointments = [];
+                console.log($scope.currentUser);
+                var index;
+                for (index = 0; index < $scope.appointments.length; ++index) {
+                    if ($scope.appointments[index].user.id === $scope.currentUser.id) {
+                        currentAppointments.push($scope.appointments[index]);
+                    }
+                }
+                ;
+                console.log(currentAppointments);
+                var duties = result;
+                var currentDuties = [];
+                var index2;
+                for (index = 0; index < duties.length; ++index) {
+                    for (index2 = 0; index2 < currentAppointments.length; ++index2) {
+                        if (currentAppointments[index2].duty.id === duties[index].id) {
+                            currentDuties.push(duties[index]);
+                            break;
+                        }
+                    }
+                }
+                console.log(currentDuties);
+                $scope.dutys = currentDuties;
             });
         };
         $scope.loadPage = function (page) {
