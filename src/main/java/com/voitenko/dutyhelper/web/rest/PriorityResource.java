@@ -20,9 +20,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * REST controller for managing Priority.
- */
 @RestController
 @RequestMapping("/api")
 public class PriorityResource {
@@ -32,9 +29,6 @@ public class PriorityResource {
     @Inject
     private PriorityRepository priorityRepository;
 
-    /**
-     * POST  /prioritys -> Create a new priority.
-     */
     @RequestMapping(value = "/prioritys",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,9 +42,6 @@ public class PriorityResource {
         return ResponseEntity.created(new URI("/api/prioritys/" + priority.getId())).build();
     }
 
-    /**
-     * PUT  /prioritys -> Updates an existing priority.
-     */
     @RequestMapping(value = "/prioritys",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,9 +55,6 @@ public class PriorityResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /prioritys -> get all the prioritys.
-     */
     @RequestMapping(value = "/prioritys",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -79,9 +67,6 @@ public class PriorityResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /prioritys/:id -> get the "id" priority.
-     */
     @RequestMapping(value = "/prioritys/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -95,9 +80,6 @@ public class PriorityResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /prioritys/:id -> delete the "id" priority.
-     */
     @RequestMapping(value = "/prioritys/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

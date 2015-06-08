@@ -19,9 +19,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * REST controller for managing Membership.
- */
 @RestController
 @RequestMapping("/api")
 public class MembershipResource {
@@ -31,9 +28,6 @@ public class MembershipResource {
     @Inject
     private MembershipRepository membershipRepository;
 
-    /**
-     * POST  /memberships -> Create a new membership.
-     */
     @RequestMapping(value = "/memberships",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -47,9 +41,6 @@ public class MembershipResource {
         return ResponseEntity.created(new URI("/api/memberships/" + membership.getId())).build();
     }
 
-    /**
-     * PUT  /memberships -> Updates an existing membership.
-     */
     @RequestMapping(value = "/memberships",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -63,9 +54,6 @@ public class MembershipResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /memberships -> get all the memberships.
-     */
     @RequestMapping(value = "/memberships",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -78,9 +66,6 @@ public class MembershipResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /memberships/:id -> get the "id" membership.
-     */
     @RequestMapping(value = "/memberships/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -94,9 +79,6 @@ public class MembershipResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /memberships/:id -> delete the "id" membership.
-     */
     @RequestMapping(value = "/memberships/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

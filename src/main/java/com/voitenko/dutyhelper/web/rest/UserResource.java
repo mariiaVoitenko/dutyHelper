@@ -19,9 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.inject.Inject;
 import java.util.List;
 
-/**
- * REST controller for managing users.
- */
 @RestController
 @RequestMapping("/api")
 public class UserResource {
@@ -34,9 +31,6 @@ public class UserResource {
     @Inject
     private MembershipRepository membershipRepository;
 
-    /**
-     * GET  /users -> get all users.
-     */
     @RequestMapping(value = "/users",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -46,9 +40,6 @@ public class UserResource {
         return userRepository.findAll();
     }
 
-    /**
-     * GET  /users/:login -> get the "login" user.
-     */
     @RequestMapping(value = "/users/{login}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -58,5 +49,14 @@ public class UserResource {
         return userRepository.findOneByLogin(login)
                 .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @RequestMapping(value = "/users/id/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    ResponseEntity<User> getUserById(@PathVariable Long id) {
+        log.debug("REST request to get User : {}", id);
+        return new ResponseEntity<>(userRepository.findOne(id), HttpStatus.OK);
     }
 }

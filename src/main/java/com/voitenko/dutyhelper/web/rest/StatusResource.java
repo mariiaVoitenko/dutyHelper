@@ -20,9 +20,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * REST controller for managing Status.
- */
 @RestController
 @RequestMapping("/api")
 public class StatusResource {
@@ -32,9 +29,6 @@ public class StatusResource {
     @Inject
     private StatusRepository statusRepository;
 
-    /**
-     * POST  /statuss -> Create a new status.
-     */
     @RequestMapping(value = "/statuss",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,9 +42,6 @@ public class StatusResource {
         return ResponseEntity.created(new URI("/api/statuss/" + status.getId())).build();
     }
 
-    /**
-     * PUT  /statuss -> Updates an existing status.
-     */
     @RequestMapping(value = "/statuss",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,9 +55,6 @@ public class StatusResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /statuss -> get all the statuss.
-     */
     @RequestMapping(value = "/statuss",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -79,9 +67,6 @@ public class StatusResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /statuss/:id -> get the "id" status.
-     */
     @RequestMapping(value = "/statuss/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -95,9 +80,6 @@ public class StatusResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /statuss/:id -> delete the "id" status.
-     */
     @RequestMapping(value = "/statuss/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

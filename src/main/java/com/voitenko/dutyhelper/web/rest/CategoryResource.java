@@ -20,9 +20,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * REST controller for managing Category.
- */
 @RestController
 @RequestMapping("/api")
 public class CategoryResource {
@@ -32,9 +29,6 @@ public class CategoryResource {
     @Inject
     private CategoryRepository categoryRepository;
 
-    /**
-     * POST  /categorys -> Create a new category.
-     */
     @RequestMapping(value = "/categorys",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,9 +42,6 @@ public class CategoryResource {
         return ResponseEntity.created(new URI("/api/categorys/" + category.getId())).build();
     }
 
-    /**
-     * PUT  /categorys -> Updates an existing category.
-     */
     @RequestMapping(value = "/categorys",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,9 +55,6 @@ public class CategoryResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /categorys -> get all the categorys.
-     */
     @RequestMapping(value = "/categorys",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -79,9 +67,6 @@ public class CategoryResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /categorys/:id -> get the "id" category.
-     */
     @RequestMapping(value = "/categorys/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -95,9 +80,6 @@ public class CategoryResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /categorys/:id -> delete the "id" category.
-     */
     @RequestMapping(value = "/categorys/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

@@ -20,9 +20,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * REST controller for managing Duty.
- */
 @RestController
 @RequestMapping("/api")
 public class DutyResource {
@@ -32,9 +29,6 @@ public class DutyResource {
     @Inject
     private DutyRepository dutyRepository;
 
-    /**
-     * POST  /dutys -> Create a new duty.
-     */
     @RequestMapping(value = "/dutys",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,9 +42,6 @@ public class DutyResource {
         return ResponseEntity.created(new URI("/api/dutys/" + duty.getId())).build();
     }
 
-    /**
-     * PUT  /dutys -> Updates an existing duty.
-     */
     @RequestMapping(value = "/dutys",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,9 +55,6 @@ public class DutyResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /dutys -> get all the dutys.
-     */
     @RequestMapping(value = "/dutys",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -79,9 +67,6 @@ public class DutyResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /dutys/:id -> get the "id" duty.
-     */
     @RequestMapping(value = "/dutys/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -95,9 +80,6 @@ public class DutyResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /dutys/:id -> delete the "id" duty.
-     */
     @RequestMapping(value = "/dutys/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

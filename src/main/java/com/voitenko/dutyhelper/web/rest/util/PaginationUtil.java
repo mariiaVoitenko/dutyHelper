@@ -8,14 +8,6 @@ import org.springframework.http.HttpHeaders;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-/**
- * Utility class for handling pagination.
- *
- * <p>
- * Pagination uses the same principles as the <a href="https://developer.github.com/v3/#pagination">Github API</api>,
- * and follow <a href="http://tools.ietf.org/html/rfc5988">RFC 5988 (Link header)</a>.
- * </p>
- */
 public class PaginationUtil {
 
     public static final int DEFAULT_OFFSET = 1;

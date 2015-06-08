@@ -31,9 +31,6 @@ public class AppointmentResource {
     @Inject
     private AppointmentRepository appointmentRepository;
 
-    /**
-     * POST  /appointments -> Create a new appointment.
-     */
     @RequestMapping(value = "/appointments",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -47,9 +44,6 @@ public class AppointmentResource {
         return ResponseEntity.created(new URI("/api/appointments/" + appointment.getId())).build();
     }
 
-    /**
-     * PUT  /appointments -> Updates an existing appointment.
-     */
     @RequestMapping(value = "/appointments",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -63,9 +57,6 @@ public class AppointmentResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /appointments -> get all the appointments.
-     */
     @RequestMapping(value = "/appointments",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -78,9 +69,6 @@ public class AppointmentResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /appointments/:id -> get the "id" appointment.
-     */
     @RequestMapping(value = "/appointments/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -94,9 +82,6 @@ public class AppointmentResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /appointments/:id -> delete the "id" appointment.
-     */
     @RequestMapping(value = "/appointments/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)

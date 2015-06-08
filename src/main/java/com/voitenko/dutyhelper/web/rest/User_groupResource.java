@@ -32,9 +32,6 @@ public class User_groupResource {
     @Inject
     private User_groupRepository user_groupRepository;
 
-    /**
-     * POST  /user_groups -> Create a new user_group.
-     */
     @RequestMapping(value = "/user_groups",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -48,9 +45,6 @@ public class User_groupResource {
         return ResponseEntity.created(new URI("/api/user_groups/" + user_group.getId())).build();
     }
 
-    /**
-     * PUT  /user_groups -> Updates an existing user_group.
-     */
     @RequestMapping(value = "/user_groups",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,9 +58,6 @@ public class User_groupResource {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * GET  /user_groups -> get all the user_groups.
-     */
     @RequestMapping(value = "/user_groups",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -79,9 +70,6 @@ public class User_groupResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
-     * GET  /user_groups/:id -> get the "id" user_group.
-     */
     @RequestMapping(value = "/user_groups/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -95,9 +83,6 @@ public class User_groupResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
-     * DELETE  /user_groups/:id -> delete the "id" user_group.
-     */
     @RequestMapping(value = "/user_groups/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)
