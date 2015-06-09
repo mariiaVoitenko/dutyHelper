@@ -11,10 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -58,5 +55,28 @@ public class UserResource {
     ResponseEntity<User> getUserById(@PathVariable Long id) {
         log.debug("REST request to get User : {}", id);
         return new ResponseEntity<>(userRepository.findOne(id), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/users/email",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    ResponseEntity<User> getUserByEmail(@RequestParam("email") String email) {
+        log.debug("REST request to get User : {}", email);
+        return userRepository.findOneByEmail(email)
+            .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @RequestMapping(value = "/users/validate/{login}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    String getPassword(@PathVariable String login) {
+        log.debug("REST request to get User : {}", login);
+        ResponseEntity<User> u = userRepository.findOneByLogin(login)
+            .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return u.getBody().getPassword();
     }
 }
