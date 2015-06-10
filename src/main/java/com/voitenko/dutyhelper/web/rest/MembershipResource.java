@@ -32,26 +32,26 @@ public class MembershipResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@RequestBody Membership membership) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody Membership membership) throws URISyntaxException {
         log.debug("REST request to save Membership : {}", membership);
         if (membership.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new membership cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         membershipRepository.save(membership);
-        return ResponseEntity.created(new URI("/api/memberships/" + membership.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/memberships",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@RequestBody Membership membership) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody Membership membership) throws URISyntaxException {
         log.debug("REST request to update Membership : {}", membership);
         if (membership.getId() == null) {
             return create(membership);
         }
         membershipRepository.save(membership);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/memberships",

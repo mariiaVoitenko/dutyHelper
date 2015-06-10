@@ -33,26 +33,26 @@ public class PriorityResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody Priority priority) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody Priority priority) throws URISyntaxException {
         log.debug("REST request to save Priority : {}", priority);
         if (priority.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new priority cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         priorityRepository.save(priority);
-        return ResponseEntity.created(new URI("/api/prioritys/" + priority.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/prioritys",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody Priority priority) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody Priority priority) throws URISyntaxException {
         log.debug("REST request to update Priority : {}", priority);
         if (priority.getId() == null) {
             return create(priority);
         }
         priorityRepository.save(priority);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/prioritys",

@@ -33,26 +33,26 @@ public class CategoryResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody Category category) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody Category category) throws URISyntaxException {
         log.debug("REST request to save Category : {}", category);
         if (category.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new category cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         categoryRepository.save(category);
-        return ResponseEntity.created(new URI("/api/categorys/" + category.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/categorys",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody Category category) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody Category category) throws URISyntaxException {
         log.debug("REST request to update Category : {}", category);
         if (category.getId() == null) {
             return create(category);
         }
         categoryRepository.save(category);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/categorys",

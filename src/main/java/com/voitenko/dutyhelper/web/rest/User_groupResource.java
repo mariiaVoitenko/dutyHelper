@@ -36,26 +36,26 @@ public class User_groupResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody User_group user_group) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody User_group user_group) throws URISyntaxException {
         log.debug("REST request to save User_group : {}", user_group);
         if (user_group.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new user_group cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         user_groupRepository.save(user_group);
-        return ResponseEntity.created(new URI("/api/user_groups/" + user_group.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/user_groups",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody User_group user_group) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody User_group user_group) throws URISyntaxException {
         log.debug("REST request to update User_group : {}", user_group);
         if (user_group.getId() == null) {
             return create(user_group);
         }
         user_groupRepository.save(user_group);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/user_groups",

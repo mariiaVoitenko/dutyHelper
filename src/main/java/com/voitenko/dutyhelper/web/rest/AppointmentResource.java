@@ -35,26 +35,26 @@ public class AppointmentResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@RequestBody Appointment appointment) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody Appointment appointment) throws URISyntaxException {
         log.debug("REST request to save Appointment : {}", appointment);
         if (appointment.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new appointment cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         appointmentRepository.save(appointment);
-        return ResponseEntity.created(new URI("/api/appointments/" + appointment.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/appointments",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@RequestBody Appointment appointment) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody Appointment appointment) throws URISyntaxException {
         log.debug("REST request to update Appointment : {}", appointment);
         if (appointment.getId() == null) {
             return create(appointment);
         }
         appointmentRepository.save(appointment);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/appointments",

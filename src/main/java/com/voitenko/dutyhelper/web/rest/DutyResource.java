@@ -33,26 +33,26 @@ public class DutyResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody Duty duty) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody Duty duty) throws URISyntaxException {
         log.debug("REST request to save Duty : {}", duty);
         if (duty.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new duty cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         dutyRepository.save(duty);
-        return ResponseEntity.created(new URI("/api/dutys/" + duty.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/dutys",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody Duty duty) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody Duty duty) throws URISyntaxException {
         log.debug("REST request to update Duty : {}", duty);
         if (duty.getId() == null) {
             return create(duty);
         }
         dutyRepository.save(duty);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/dutys",

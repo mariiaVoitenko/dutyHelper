@@ -33,26 +33,26 @@ public class StatusResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody Status status) throws URISyntaxException {
+    public ResponseEntity<String> create(@RequestBody Status status) throws URISyntaxException {
         log.debug("REST request to save Status : {}", status);
         if (status.getId() != null) {
-            return ResponseEntity.badRequest().header("Failure", "A new status cannot already have an ID").build();
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         statusRepository.save(status);
-        return ResponseEntity.created(new URI("/api/statuss/" + status.getId())).build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/statuss",
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody Status status) throws URISyntaxException {
+    public ResponseEntity<String> update(@RequestBody Status status) throws URISyntaxException {
         log.debug("REST request to update Status : {}", status);
         if (status.getId() == null) {
             return create(status);
         }
         statusRepository.save(status);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @RequestMapping(value = "/statuss",
